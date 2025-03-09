@@ -1,4 +1,5 @@
 import styles from "./ButtonContainer.module.css";
+import PropTypes from "prop-types"; // Import PropTypes for validation
 
 const ButtonContainer = ({ onButtonClick }) => {
   const buttonNames = [
@@ -8,7 +9,6 @@ const ButtonContainer = ({ onButtonClick }) => {
     "3",
     "+",
     "4",
-    
     "5",
     "6",
     "*",
@@ -20,7 +20,6 @@ const ButtonContainer = ({ onButtonClick }) => {
     ".",
     "=",
     "0",
-    
   ];
 
   return (
@@ -36,6 +35,11 @@ const ButtonContainer = ({ onButtonClick }) => {
       ))}
     </div>
   );
+};
+
+// Adding PropTypes validation
+ButtonContainer.propTypes = {
+  onButtonClick: PropTypes.func.isRequired, // Ensuring 'onButtonClick' is a function and required
 };
 
 export default ButtonContainer;
